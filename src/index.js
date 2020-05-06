@@ -6,5 +6,6 @@ const element = (
   </div>
 );
 
+const root = document.querySelector("#root");
 
-console.log(element);
+Didact.render(element, root);
