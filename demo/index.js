@@ -1,11 +1,19 @@
 import Didact from "../src";
 
-const element = (
-  <div id="foo">
-    <h1>hello</h1> <h2>world</h2>
-  </div>
-);
+const container = document.getElementById("root");
 
-const root = document.querySelector("#root");
+const updateValue = (e) => {
+  rerender(e.target.value);
+};
 
-Didact.render(element, root);
+const rerender = (value) => {
+  const element = (
+    <div>
+      <input onInput={updateValue} value={value} />
+      <h2>Hello {value}</h2>
+    </div>
+  );
+  Didact.render(element, container);
+};
+
+rerender("World");
